@@ -1,5 +1,4 @@
 import random
-money = 50000
 
 
 
@@ -19,7 +18,47 @@ money = 50000
 
 
 
-
+def roll():
+  money = 50000
+  bet = int(input("Enter The Amout of Money You Can lose: ")) 
+  while (money < bet):
+    print("You Only Have:", money)
+    bet = int(input(""))
+    
+  tar = int(input("Choose a Target: "))
+  coc = input("Choose Over or Under: ")
+  while (coc != "over") and (coc != "under"):
+    coc = input("PLEASE CHOOSE EITHER \"over\" OR \"under\": ")
+  multiplier = 0 
+  risk = 0
+ 
+  
+  while (money > 0):
+    dice = random.randint(1,100)
+    money = money - bet
+    if coc in ["over"]:
+        risk = 100 - tar
+    if coc in ["under"]:
+        risk = tar - 1
+    risk = risk / 100
+    multiplier = 0.98 / risk
+    print(multiplier)
+  
+    if (coc == "over"):
+      if (dice > tar):
+        money = money * multiplier
+        
+        
+      
+      
+    elif coc == "under":
+      print(49)
+    
+    else:
+      ()
+      
+      
+roll()
 
 
 def gg(): # GUESSING GAME FOR THOSE WHO ARE READING ALSO 67
@@ -47,4 +86,3 @@ def gg(): # GUESSING GAME FOR THOSE WHO ARE READING ALSO 67
   if lives == 0:
     print("You Lost!")
     lives = -1
-gg()

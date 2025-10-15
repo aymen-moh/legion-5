@@ -1,7 +1,8 @@
 import random
 import time
 
-
+def blackjack():
+  print("")
 
 def roll():
   money = 50000
@@ -59,32 +60,51 @@ def roll():
 
 
 def gg(): # GUESSING GAME FOR THOSE WHO ARE READING ALSO 67
-  multiplier = 24
-  money = 50000
-  lives = 5
-  rn = random.randint(1, 100) 
-  guess = int(input("Guess a Number Between 1 and 100!: "))
-  if lives == 0:
-    print("You Lost!")
-    lives = -1
-  while (lives > 0):
-    if guess < rn:
-      multiplier = round(multiplier / 2,)
-      print("Lives Left:", lives)
-      print(f"Current multiplier: {multiplier}")
-      guess = int(input("Guess Higher!: "))
-      
-      
-      lives -= 1
-    elif guess > rn:
-      print("Lives Left:", lives)
+  while True:
+    guess = 0
+    money = 50000
+    again = ""
+    multiplier = 36.67
+    bet = int(input("Enter Your Bet!"))
+    lives = 6
+    rn = random.randint(1, 100) 
+    guess = int(input(f"Guess a Number Between 1 and 100!: {rn} "))
+    win = False
     
-      guess = int(input("Guess Lower!: "))
-      lives -= 1
-    else:
-      print("You Win!")
-      break
-  if lives == 0:
-    print("You Lost!")
-    lives = -1
+   
+    while (lives > 0) and not win:
+    
+      if guess < rn:
+        multiplier = round(multiplier / 2, 2)
+        print("Lives Left:", lives)
+        print(f"Current multiplier: {multiplier}")
+        guess = int(input("Guess Higher!: "))
+        
+        
+        lives -= 1
+      elif guess > rn:
+        multiplier = round(multiplier / 2, 2)
+        print("Lives Left:", lives)
+        print(f"Current multiplier: {multiplier}")
+        guess = int(input("Guess Lower!: "))
+        lives -= 1
+        
+      else:
+        money += round(bet * multiplier, 0)
+        print(f"You Win! YOU WON {bet * multiplier} WITH {multiplier}x Your bet!")
+        win = True
+        
+        
+      if lives == 0:
+        money -= bet
+        print("You Lost!")
+        print(f"The Number Was: {rn}")
+        print(f"YOU HAVE {money} now! ")
+        again = 67
+    if money <= 0:
+      print("You Are Broke!")
+    again = input("Press Anything To Play Again!")
+    win = False
+  
+  
 gg()

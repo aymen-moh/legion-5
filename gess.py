@@ -16,10 +16,73 @@ def blackjack():
     FBH = 0
     SBH = 0
     card_deck = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11)
+    FirstPull = True
+    SecondPull = False
+    ThirdPull = False
+    FourthPull = False
+    FifthPull = False
+    SixthPull = False
+    
+    HitOrStand = ""
     s = "succsess message"
-    if (firsthand + secondhand + thirdhand + fourthhand + sixthhand + seventhhand) <= 21:
-      RandomNumber = random.randint(0, 12)
-      firsthand = card_deck[RandomNumber]
+    while FirstPull:
+      
+        RandomNumber = random.randint(0, 12)
+        firsthand = card_deck[RandomNumber]
+        RandomNumber = random.randint(0, 12)
+        secondhand = card_deck[RandomNumber]
+        RandomNumber = random.randint(0, 12)
+        FBH = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand} Total: {firsthand + secondhand} \n Dealer is Showing {FBH}") 
+        FirstPull = False
+        SecondPull = True
+        
+        
+    while SecondPull:
+      HitOrStand = input("Type \"hit\" To Hit And \"stand\" To Stand")
+      if HitOrStand in ["hit"]:
+        RandomNumber = random.randint(0, 12)
+        thirdhand = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand}, {thirdhand} Total: {firsthand + secondhand + thirdhand} \n Dealer is Showing {FBH}")
+        SecondPull = False
+        ThirdPull = True# SLEF NOTE: DONT FORGET TO IMPLEMENT THE STAND SYSTEM AND THE BUST SYSTEM IF YOU READ THIS GET 67'ed
+    while ThirdPull:
+      userhandtotal = firsthand + secondhand + thirdhand + fourthhand + sixthhand + seventhhand
+      HitOrStand = input("Type \"hit\" To Hit And \"stand\" To Stand \n Dealer is Showing {FBH}")
+      if HitOrStand in ["hit"]:
+        RandomNumber = random.randint(0, 12)
+        fourthhand = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand}, {thirdhand}, {fourthhand} Total: {firsthand + secondhand + thirdhand + fourthhand}")
+        FourthPull = True
+        ThirdPull = False
+    while FourthPull:
+      HitOrStand = input("Type \"hit\" To Hit And \"stand\" To Stand \n Dealer is Showing {FBH}")
+      if HitOrStand in ["hit"]:
+        RandomNumber = random.randint(0, 12)
+        fifthhand = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand}, {thirdhand}, {fourthhand}, {fifthhand} Total: {firsthand + secondhand + thirdhand + fourthhand + fifthhand}")
+        FourthPull = False
+        FifthPull = True
+    while FifthPull:
+      HitOrStand = input("Type \"hit\" To Hit And \"stand\" To Stand \n Dealer is Showing {FBH}")
+      if HitOrStand in ["hit"]:
+        RandomNumber = random.randint(0, 12)
+        sixthhand = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand}, {thirdhand}, {fourthhand}, {fifthhand}, {sixthhand} Total: {firsthand + secondhand + thirdhand + fourthhand + fifthhand + sixthhand}")
+        FifthPull = False
+        SixthPull = True
+    while SixthPull:
+      HitOrStand = input("Type \"hit\" To Hit And \"stand\" To Stand \n Dealer is Showing {FBH}")
+      if HitOrStand in ["hit"]:
+        RandomNumber = random.randint(0, 12)
+        seventhhand = card_deck[RandomNumber]
+        print(f"Your Hand: {firsthand}, {secondhand}, {thirdhand}, {fourthhand}, {fifthhand}, {sixthhand}, {seventhhand} Total: {firsthand + secondhand + thirdhand + fourthhand + fifthhand + sixthhand + seventhhand}")
+        SixthPull = False
+    
+    
+      
+      
+      
       
 
 blackjack()

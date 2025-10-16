@@ -13,7 +13,13 @@ def blackjack():
     fifthhand = 0
     sixthhand = 0
     seventhhand = 0
-    while True:
+    FBH = 0
+    SBH = 0
+    card_deck = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11)
+    s = "succsess message"
+    if (firsthand + secondhand + thirdhand + fourthhand + sixthhand + seventhhand) <= 21:
+      RandomNumber = random.randint(0, 12)
+      firsthand = card_deck[RandomNumber]
       
 
 blackjack()

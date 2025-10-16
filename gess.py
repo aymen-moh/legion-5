@@ -1,31 +1,22 @@
 import random
 import time
 
-def blackjack():
-  while True:
-    cards = (1, 2 , 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 11)
-    rd = random.randint(0, 12) # random deck yall
-    fh = cards[rd]   # first hand   #
-    rd = random.randint(0, 12)
-    sh = cards[rd]   # second hand #
-    rd = random.randint(0, 12)
-    fdh = cards[rd] # first Dealer hand
-    rd = random.randint(0, 12)
-    sdh = cards[rd] # second ^^^^^^^
-    bal = 50000
-    bet = int(input(f"Put Bet: {bal} <-- This Is Your Balance"))
-     # kool
-    hit = False
-    stand = False
-    while bet <= bal:
-      while (fh + sh) <= 21:
-        print(f" {fh} {sh} Total: {sh + fh}", )
-        
-        hal = input("^^^ This is Your Deck, Type \"hit\" to Hit and \"stand\" to Stand") # idk what hal is its just a random variable lol
 
+def blackjack():
+  playing = True
+  while playing:
+    playing = False
+    firsthand = 0
+    secondhand =0
+    thirdhand = 0
+    fourthhand = 0
+    fifthhand = 0
+    sixthhand = 0
+    seventhhand = 0
+    while True:
+      
 
 blackjack()
-
 
 
 

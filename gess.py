@@ -1,5 +1,21 @@
 import random
 import time
+
+
+def hilo():
+  dice1 = random.randint(3, 97)
+  choice = input(f"{dice1} Higher Or Lower ")
+  dice2 = random.randint(1, 100)
+  if choice in ["higher"] and dice1 > dice2:
+    time.sleep(0.267)
+    print("YOU WoN")
+  elif choice in ["lower"] and dice1 < dice2:
+    time.sleep(0.267)
+    print("You Won!")
+    
+  
+  
+hilo()
 def blackjack():
   def stand():
     player_total = firsthand + secondhand + thirdhand + fourthhand + fifthhand + sixthhand + seventhhand
@@ -169,23 +185,6 @@ def blackjack():
         stand()
       print(s)
       SeventhPull = False
-    
-    
-      
-      
-      
-      
-
-blackjack()
-
-
-
-
-
-
-
-
-
 def roll():
   money = 50000
   bet = int(input("Enter The Amout of Money You Can lose: ")) 

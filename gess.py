@@ -1,6 +1,7 @@
 import random
 import time
-
+# learnt new attend function. will be implementing to blackjack soon.
+# stsrted working on "New-game.py", will not be updating since i found out its haram to make.
 
 def hilo():
   dice1 = random.randint(3, 97)
@@ -15,7 +16,6 @@ def hilo():
     
   
   
-hilo()
 def blackjack():
   def stand():
     player_total = firsthand + secondhand + thirdhand + fourthhand + fifthhand + sixthhand + seventhhand
